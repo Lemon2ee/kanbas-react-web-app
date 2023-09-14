@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      .content-container {
+        display: inline-block;
+      }
+
+      .group-header {
+        display: flex;
+        align-items: center;
+        /* Vertically center the select element */
+      }
+
+      .inline-forms form {
+        display: inline-block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table style="width: 100%">
+      <tr>
+        <!-- Column 1 -->
+        <td style="vertical-align: top">
+          <ul>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Studio</a></li>
+            <li><a href="#">Commons</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </td>
+
+        <!-- Column 2 -->
+        <td style="vertical-align: top">
+          <ul>
+            <li><a href="/kanbas/home.html">Home</a></li>
+            <li><a href="#">Modules</a></li>
+            <li><a href="#">Piazza</a></li>
+            <li><a href="#">Zoom Meetings</a></li>
+            <li><a href="#">Assignments</a></li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="/kanbas/grades.html">Grades</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="#">Panopto Video</a></li>
+            <li><a href="#">Discussions</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Files</a></li>
+            <li><a href="#">Rubrics</a></li>
+            <li><a href="#">Outcomes</a></li>
+            <li><a href="#">Collaboration</a></li>
+            <li><a href="#">Syllabus</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </td>
+
+        <td style="vertical-align: top">
+          <ul>
+            <div>
+              <select>
+                <option value="speedGrader">SpeedGrader</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </select>
+            </div>
+
+            <hr />
+            <h2>Assignment Name</h2>
+            <input type="text" value="A1 - ENV + HTML" />
+
+            <br />
+            <br />
+            <textarea>This is the assignment description </textarea>
+
+            <br />
+            <br />
+            Points
+            <br />
+            <input type="text" value="100" />
+
+            <br />
+            <br />
+            Assignment Group
+            <br />
+            <select>
+              <option value="ASSIGNMENTS" selected>ASSIGNMENTS</option>
+              <!-- Add other options here -->
+            </select>
+
+            <br />
+            <br />
+            Display Grade as
+            <br />
+            <select>
+              <option value="Percentage" selected>Percentage</option>
+              <!-- Add other options here -->
+            </select>
+
+            <br />
+            <br />
+            Submission Type
+            <br />
+            <select>
+              <option value="online" selected>Online</option>
+              <!-- Add other options here -->
+            </select>
+
+            <br />
+            <br />
+            Online Entry Options
+            <br />
+            <label
+              ><input
+                type="checkbox"
+                name="submission-option"
+                value="Text Entry"
+              />Text Entry</label
+            ><br />
+            <label
+              ><input
+                type="checkbox"
+                name="submission-option"
+                value="Website URL"
+              />Website URL</label
+            ><br />
+            <label
+              ><input
+                type="checkbox"
+                name="submission-option"
+                value="Media Recordings"
+              />Media Recordings</label
+            ><br />
+            <label
+              ><input
+                type="checkbox"
+                name="submission-option"
+                value="Student Annotation"
+              />Student Annotation</label
+            ><br />
+            <label
+              ><input
+                type="checkbox"
+                name="submission-option"
+                value="File Uploads"
+              />File Uploads</label
+            ><br />
+
+            <br />
+            <br />
+            Submission Attempts
+            <br />
+            <select>
+              <option value="unlimited" selected>Unlimited</option>
+              <!-- Add other options here -->
+            </select>
+
+            <br />
+            <br />
+            Plagiarism Review
+            <br />
+            <select>
+              <option value="none" selected>None</option>
+              <!-- Add other options here -->
+            </select>
+
+            <br />
+            <br />
+            Group Assignment
+            <br />
+            <label><input type="checkbox" />This is a group assignment</label>
+
+            <br />
+            <br />
+            Peer Reviews
+            <br />
+            <label><input type="checkbox" />Require Peer Reviews</label>
+
+            <br />
+            <br />
+            Assign to
+            <br />
+            <input type="text" value="Everyone" />
+
+            <br />
+            <br />
+            <label for="date">Due</label>
+            <br />
+            <input type="date" id="dueDate" name="date" />
+
+            <br />
+            <br />
+            <label for="date">Available from</label>
+            <br />
+            <input type="date" id="eromDate" name="date" />
+
+            <br />
+            <br />
+            <label for="date">Until</label>
+            <br />
+            <input type="date" id="endDate" name="date" />
+
+            <br />
+            <br />
+            <div class="inline-forms">
+              <form action="/kanbas/home.html">
+                <button type="submit">Cancel</button>
+              </form>
+              <form action="/kanbas/home.html">
+                <button type="submit">Save</button>
+              </form>
+            </div>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
