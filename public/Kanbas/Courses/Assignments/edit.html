@@ -9,6 +9,10 @@
         border-collapse: collapse;
       }
 
+      td {
+        vertical-align: top;
+      }
+
       .content-container {
         display: inline-block;
       }
@@ -29,6 +33,11 @@
       .checkbox-label {
         display: block;
       }
+
+      .column {
+        flex: 1; /* Allow columns to expand or collapse based on content */
+        padding: 10px; /* Add some padding to each column */
+      }
     </style>
   </head>
 
@@ -36,7 +45,7 @@
     <table>
       <tr>
         <!-- Column 1 -->
-        <td style="vertical-align: top">
+        <td class="column">
           <ul>
             <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
             <li><a href="#">Dashboard</a></li>
@@ -51,7 +60,7 @@
         </td>
 
         <!-- Column 2 -->
-        <td style="vertical-align: top">
+        <td class="column">
           <ul>
             <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
             <li><a href="#">Modules</a></li>
@@ -76,7 +85,7 @@
           </ul>
         </td>
 
-        <td style="vertical-align: top">
+        <td class="column">
           <div>
             <select>
               <option value="speedGrader">SpeedGrader</option>
