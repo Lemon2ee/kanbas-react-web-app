@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <style>
+      /* Add your custom CSS styles here if needed */
+      table {
+        border-collapse: collapse;
+      }
+
+      td {
+        vertical-align: top;
+      }
+
+      .column-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .group-header {
+        display: flex;
+        align-items: center;
+        /* Vertically center the select element */
+      }
+
+      .column {
+        flex: 1; /* Allow columns to expand or collapse based on content */
+        padding: 10px; /* Add some padding to each column */
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <!-- Column 1 -->
+        <td class="column">
+          <ul>
+            <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Studio</a></li>
+            <li><a href="#">Commons</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </td>
+
+        <!-- Column 2 -->
+        <td class="column">
+          <ul>
+            <li><a href="/kanbas/home.html">Home</a></li>
+            <li><a href="#">Modules</a></li>
+            <li><a href="#">Piazza</a></li>
+            <li><a href="#">Zoom Meetings</a></li>
+            <li><a href="#">Assignments</a></li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="/kanbas/grades.html">Grades</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="#">Panopto Video</a></li>
+            <li><a href="#">Discussions</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Files</a></li>
+            <li><a href="#">Rubrics</a></li>
+            <li><a href="#">Outcomes</a></li>
+            <li><a href="#">Collaboration</a></li>
+            <li><a href="#">Syllabus</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </td>
+
+        <!-- Column 3 -->
+        <td class="column">
+          <div>
+            <select>
+              <option value="option1">Gradebook</option>
+              <option value="option2">Select Option 2</option>
+            </select>
+            <button>Import</button>
+
+            <select>
+              <option value="option3">Export</option>
+              <option value="option4">Select Option 4</option>
+            </select>
+            <button>Configure</button>
+          </div>
+
+          <div>
+            <h2>Student Names</h2>
+            <input type="text" placeholder="Search Students" />
+          </div>
+
+          <div>
+            <h2>Assignment Names</h2>
+            <input type="text" placeholder="Search Assignments" />
+          </div>
+
+          <div style="margin-top: 20px; margin-bottom: 20px">
+            <button>Apply Filters</button>
+          </div>
+
+          <!-- Grade Table -->
+          <div>
+            <table border="1">
+              <tr>
+                <td>Student Name</td>
+                <td>
+                  A1 SETUP <br />
+                  Out of 100
+                </td>
+                <td>
+                  A2 HTML <br />
+                  Out of 100
+                </td>
+                <td>
+                  A3 CSS <br />
+                  Out of 100
+                </td>
+                <td>
+                  A4 BOOTSTRAP <br />
+                  Out of 100
+                </td>
+              </tr>
+              <tr>
+                <td>Alice</td>
+                <td>85</td>
+                <td>92</td>
+                <td>78</td>
+                <td>96</td>
+              </tr>
+              <tr>
+                <td>Bob</td>
+                <td>74</td>
+                <td>88</td>
+                <td>90</td>
+                <td>79</td>
+              </tr>
+              <tr>
+                <td>Charlie</td>
+                <td class="editable">
+                  <input
+                    type="number"
+                    value="91"
+                    min="0"
+                    max="100"
+                    style="text-align: center"
+                  />
+                </td>
+                <td>64</td>
+                <td>72</td>
+                <td>83</td>
+              </tr>
+              <tr>
+                <td>David</td>
+                <td>68</td>
+                <td>75</td>
+                <td>89</td>
+                <td>94</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
