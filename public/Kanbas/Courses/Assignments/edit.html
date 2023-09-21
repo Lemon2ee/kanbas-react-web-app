@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Website</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      vertical-align: top;
+    }
+
+    .content-container {
+      display: inline-block;
+    }
+
+    .group-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .inline-forms form {
+      display: inline-block;
+    }
+
+    .edit-section {
+      margin-top: 20px;
+    }
+
+    .checkbox-label {
+      display: block;
+    }
+
+    .column {
+      flex: 1;
+      /* Allow columns to expand or collapse based on content */
+      padding: 10px;
+      /* Add some padding to each column */
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <!-- Column 1 -->
+      <td class="column">
+        <ul>
+          <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
+          <li><a href="#">Calendar</a></li>
+          <li><a href="#">Inbox</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Studio</a></li>
+          <li><a href="#">Commons</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </td>
+
+      <!-- Column 2 -->
+      <td class="column">
+        <ul>
+          <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+          <li><a href="#">Modules</a></li>
+          <li><a href="#">Piazza</a></li>
+          <li><a href="#">Zoom Meetings</a></li>
+          <li>
+            <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+          </li>
+          <li><a href="#">Quizzes</a></li>
+          <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+          <li><a href="#">People</a></li>
+          <li><a href="#">Panopto Video</a></li>
+          <li><a href="#">Discussions</a></li>
+          <li><a href="#">Announcements</a></li>
+          <li><a href="#">Pages</a></li>
+          <li><a href="#">Files</a></li>
+          <li><a href="#">Rubrics</a></li>
+          <li><a href="#">Outcomes</a></li>
+          <li><a href="#">Collaboration</a></li>
+          <li><a href="#">Syllabus</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </td>
+
+      <td class="column">
+        <div>
+          <select>
+            <option value="speedGrader">SpeedGrader</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
+
+        <hr />
+
+        <div class="edit-section">
+          <label for="assignmentName">Assignment Name</label><br />
+          <input type="text" id="assignmentName" value="A1 - ENV + HTML" />
+        </div>
+
+        <div class="edit-section">
+          <label for="assignmentDescription">Assignment Description</label><br />
+          <textarea id="assignmentDescription">
+This is the assignment description</textarea>
+        </div>
+
+        <div class="edit-section">
+          <label for="points">Points</label><br />
+          <input type="text" id="points" value="100" />
+        </div>
+
+        <div class="edit-section">
+          <label for="assignmentGroup">Assignment Group</label><br />
+          <select id="assignmentGroup">
+            <option value="ASSIGNMENTS" selected>ASSIGNMENTS</option>
+            <!-- Add other options here -->
+          </select>
+        </div>
+
+        <div class="edit-section">
+          <label for="displayGradeAs">Display Grade as</label><br />
+          <select id="displayGradeAs">
+            <option value="Percentage" selected>Percentage</option>
+            <!-- Add other options here -->
+          </select>
+        </div>
+
+        <div class="edit-section">
+          <label for="submissionType">Submission Type</label><br />
+          <select id="submissionType">
+            <option value="online" selected>Online</option>
+            <!-- Add other options here -->
+          </select>
+        </div>
+
+        <div class="edit-section">
+          <label for="onlineEntryOptions">Online Entry Options</label><br />
+          <div class="checkbox-label">
+            <input type="checkbox" name="submission-option" value="Text Entry" />
+            Text Entry
+          </div>
+          <div class="checkbox-label">
+            <input type="checkbox" name="submission-option" value="Website URL" />
+            Website URL
+          </div>
+          <div class="checkbox-label">
+            <input type="checkbox" name="submission-option" value="Media Recordings" />
+            Media Recordings
+          </div>
+          <div class="checkbox-label">
+            <input type="checkbox" name="submission-option" value="Student Annotation" />
+            Student Annotation
+          </div>
+          <div class="checkbox-label">
+            <input type="checkbox" name="submission-option" value="File Uploads" />
+            File Uploads
+          </div>
+        </div>
+
+        <div class="edit-section">
+          <label for="submissionAttempts">Submission Attempts</label><br />
+          <select id="submissionAttempts">
+            <option value="unlimited" selected>Unlimited</option>
+            <!-- Add other options here -->
+          </select>
+        </div>
+
+        <div class="edit-section">
+          <label for="plagiarismReview">Plagiarism Review</label><br />
+          <select id="plagiarismReview">
+            <option value="none" selected>None</option>
+            <!-- Add other options here -->
+          </select>
+        </div>
+
+        <div class="edit-section">
+          <label for="groupAssignment">Group Assignment</label><br />
+          <input type="checkbox" id="groupAssignment" /> This is a group
+          assignment
+        </div>
+
+        <div class="edit-section">
+          <label for="peerReviews">Peer Reviews</label><br />
+          <input type="checkbox" id="peerReviews" /> Require Peer Reviews
+        </div>
+
+        <div class="edit-section">
+          <label for="assignTo">Assign to</label><br />
+          <input type="text" id="assignTo" value="Everyone" />
+        </div>
+
+        <div class="edit-section">
+          <label for="dueDate">Due</label><br />
+          <input type="date" id="dueDate" name="date" />
+        </div>
+
+        <div class="edit-section">
+          <label for="availableFrom">Available from</label><br />
+          <input type="date" id="availableFrom" name="date" />
+        </div>
+
+        <div class="edit-section">
+          <label for="until">Until</label><br />
+          <input type="date" id="until" name="date" />
+        </div>
+
+        <div class="edit-section inline-forms">
+          <form action="/Kanbas/Courses/Assignments/screen.html">
+            <button type="submit">Cancel</button>
+          </form>
+          <form action="/Kanbas/Courses/Assignments/screen.html">
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
