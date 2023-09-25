@@ -31,12 +31,13 @@
 
     <main>
         <!-- kanbas nav sidebar -->
-        <div class="d-flex flex-column flex-shrink-0" style="width: 5rem; height: 100vh;">
+        <div class="d-flex flex-column flex-shrink-0 flex-grow-1 bg-black"
+            style="width: 80px; max-width: 80px; height: 100vh;">
             <a href="/" class="d-block p-2 link-dark bg-black">
                 <img src="https://instructure-uploads.s3.amazonaws.com/account_145230000000000001/attachments/949/NU_MonoLVX_RGB_RW.png"
                     alt="kanbas-logo" class="img-fluid">
             </a>
-            <ul class="nav nav-flush mb-auto flex-column text-center d-flex">
+            <ul class="nav nav-flush mb-auto flex-column text-center d-flex bg-white">
                 <li class="nav-item active py-2 bg-white text-danger">
                     <a href="/Kanbas/Account/Profile/screen.html">
                         <i class="fa-regular fa-user fa-xl" style="color: gray;"></i>
@@ -109,12 +110,12 @@
                     </a>
                 </li>
 
-                <li class="bg-black" style="height: 100vh;"></li>
+                <li class="bg-black flex-grow-1 flex-shrink-0"></li>
             </ul>
         </div>
 
         <!-- main content section including nav bar and profile -->
-        <div class="d-flex flex-grow-1 flex-column">
+        <div class="d-flex flex-grow-1 flex-column overflow-auto">
             <!-- header of main page -->
             <div class="px-4 pt-4 pb-2">
                 <i class="fa-solid fa-bars fa-xl" style="color: #ff0000;"></i>
@@ -126,7 +127,7 @@
 
             <!-- flex box containing account nav bar and profile content -->
             <div class="d-flex flex-grow-1 px-4">
-                <div style="width: 8.5rem;">
+                <div style="width: 8.5rem; max-height: 100vh;" class="position-sticky top-0">
                     <ul class="list-unstyled">
                         <li class="p-2"><a href="#">Notifications</a></li>
                         <li class="p-1 border-start border-dark border-2"><a href="#" class="text-dark">Profile</a></li>
@@ -140,9 +141,30 @@
                     </ul>
                 </div>
 
-                <div class="px-4">
-                    sdasd
+                <div class="px-4 d-flex flex-grow-1 align-items-start">
+                    <div class="d-flex flex-column py-4 page-content">
+                        <i class="fa-solid fa-user-large" style="font-size: 150px;"></i>
+                        <h1>Jose Annunziato</h1>
+                        <h3>Contact</h3>
+                        <span> No registered services, you can add some on the settings page.
+                        </span>
+                        <h2>Biography</h2>
+                        <p>
+                            Faculty, Software Engineer, AI, Space, and renewable
+                            enthusiast
+                        </p>
+                        <h2>Links</h2>
+                        <p>x<a href="#">YouTube</a></p>
+                    </div>
+                    <div class="flex-grow-1 flex-shrink-0">
+                        <button type="button" class="btn btn-light btn-sm float-end">
+                            <i class="fa-solid fa-pencil"></i>
+                            Edit Profile
+                        </button>
+                    </div>
                 </div>
+
+
             </div>
         </div>
     </main>
