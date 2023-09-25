@@ -21,3 +21,13 @@ main {
     padding-top: 0.5rem;  /* Equivalent to Bootstrap's py-2 */
     padding-bottom: 0.5rem; /* Equivalent to Bootstrap's py-2 */
 }
+
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+a span{
+    color: indianred;
+    text-decoration-line: none; 
+}
