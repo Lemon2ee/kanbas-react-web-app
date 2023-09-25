@@ -8,26 +8,36 @@ main {
     overflow-y: auto;
 }
 
-.page-content p, 
-.page-content h1, 
-.page-content h2, 
-.page-content h3, 
-.page-content h4, 
-.page-content h5, 
-.page-content h6, 
+.page-content p,
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6,
 .page-content span,
 .page-content a,
 .page-content label {
-    padding-top: 0.5rem;  /* Equivalent to Bootstrap's py-2 */
-    padding-bottom: 0.5rem; /* Equivalent to Bootstrap's py-2 */
+    padding-top: 0.5rem;
+    /* Equivalent to Bootstrap's py-2 */
+    padding-bottom: 0.5rem;
+    /* Equivalent to Bootstrap's py-2 */
 }
 
 a {
-    text-decoration: none; 
+    text-decoration: none;
     color: inherit;
 }
 
-a span{
+a span {
     color: indianred;
-    text-decoration-line: none; 
+    text-decoration: none;
+}
+
+a i {
+    color: grey;
+}
+
+ul li a {
+    display: block;
 }
