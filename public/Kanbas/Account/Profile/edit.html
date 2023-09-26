@@ -24,7 +24,7 @@
             font-size: small;
         }
     </style>
-    <link href="index.css" rel="stylesheet">
+    <link href="../../sidebar.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
                 </li>
 
                 <li class="nav-item py-2 bg-black">
-                    <a href="/Kanbas/Account/Profile/screen.html">
+                    <a href="/Kanbas/Dashboard/">
                         <i class="fa-solid fa-gauge fa-xl" style="color: #ff0000;"></i>
                         <div class="mt-1"></div>
                         Dashboard
@@ -147,18 +147,12 @@
                         <i class="fa-solid fa-user-large" style="font-size: 150px;"></i>
                         <span>Name*: </span><input type="text" class="form-control" />
                         <span>Pronouns:</span>
-                        <select>
+                        <select class="form-select">
                             <option value="he">He/Him</option>
                             <option value="she">She/Her</option>
                             <option value="they">They/Them</option>
                         </select>
-                        <p>Title: <input type="text" /></p>
-
-                        <h2>Contact</h2>
-                        <p>
-                            No registered services, you can add some on the
-                            <a href="#">settings</a> page
-                        </p>
+                        <span>Title: <input type="text" class="form-control" /></span>
 
                         <h2>Contact</h2>
                         <p>
@@ -167,54 +161,76 @@
                         </p>
 
                         <h2>Biography</h2>
-                        <p style="
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              width: max-content;
-              margin: auto;
-            ">
-                            Faculty, Software Engineer, AI, Space, and renewable enthusiast
-                        </p>
-                        <textarea style="width: 100%; box-sizing: border-box" rows="3">
+                        <textarea class="form-control" rows="4">
 Faculty, Software Engineer, AI, Space, and renewable enthusiast
-</textarea>
+                        </textarea>
 
                         <h2>Links</h2>
-                        <ul>
-                            <li><a href="#">YouTube</a> Links to another website</li>
-                        </ul>
 
-                        <div style="text-align: center">
-                            <div style="display: inline-block; text-align: center">
-                                <h3>Title</h3>
-                                <input type="text" />
+                        <div class="container">
+                            <div class="row align-items-center text-center" style="height: 2em;">
+                                <!-- Duplicate of the input for Title but hidden -->
+                                <div class="col-md-auto">
+                                    <h5 style="margin: 0;">Title</h5>
+                                    <input type="text" class="invisible" />
+                                </div>
+                                <!-- Duplicate of the arrow but hidden -->
+                                <div class="col-md-auto">
+                                    <span class="arrow invisible">&#10140;</span>
+                                </div>
+                                <!-- Duplicate of the input for URL but hidden -->
+                                <div class="col-md-auto">
+                                    <h5 style="margin: 0;">URL</h5>
+                                    <input type="text" class="invisible" />
+                                </div>
+                                <div class="col-md-auto">
+                                    <button class="btn invisible">
+                                        </a><i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <span class="arrow">&#10140;</span>
-                            <div style="display: inline-block; text-align: center">
-                                <h3>URL</h3>
-                                <input type="text" />
+                            <div class="row align-items-center">
+                                <!-- Input for the Title -->
+                                <div class="col-md-auto">
+                                    <input type="text" />
+                                </div>
+                                <!-- Arrow -->
+                                <div class="col-md-auto">
+                                    <span class="arrow">&#10140;</span>
+                                </div>
+                                <!-- Input for the URL -->
+                                <div class="col-md-auto">
+                                    <input type="text" />
+                                </div>
+                                <div class="col-md-auto">
+                                    <button class="btn">
+                                        </a><i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <span class="remove"><a href="#">Remove</a></span>
+                            <button class="btn btn-light border-dark">Add another link</button>
                         </div>
+
+                        <hr>
+
                         <div>
-                            <button>Add another link</button>
+                            <div class="float-end">
+                                <button class="btn btn-light border-dark">Cancel</button>
+                                <a href="/Kanbas/Account/Profile/screen.html"><button
+                                        class="btn btn-danger border-dark">
+                                        Save Profile</button></a>
+                            </div>
+
                         </div>
-                        <div>
-                            <button>Cancel</button>
-                            <a href="/Kanbas/Account/Profile/screen.html"><button>Save Profile</button></a>
-                        </div>
-                        <div>
-                            <button>Edit Profile</button>
-                            <a href="/Kanbas/Account/Profile/screen.html"><button>Cancel Editing</button></a>
-                        </div>
-                        </p>
+
                     </div>
                     <div class="flex-grow-1 flex-shrink-0">
-                        <button type="button" class="btn btn-light btn-sm float-end">
-                            <i class="fa-solid fa-pencil"></i>
-                            Edit Profile
-                        </button>
+                        <a href="./index.html">
+                            <button type="button" class="btn btn-light btn-sm float-end align-items-center">
+                                <i class="fa-solid fa-pencil"></i>
+                                Cancel Editing
+                            </button>
+                        </a>
                     </div>
                 </div>
 

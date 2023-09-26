@@ -24,7 +24,7 @@
             font-size: small;
         }
     </style>
-    <link href="index.css" rel="stylesheet">
+    <link href="../../sidebar.css" rel="stylesheet">
 </head>
 
 <body>
@@ -37,17 +37,17 @@
                 <img src="https://instructure-uploads.s3.amazonaws.com/account_145230000000000001/attachments/949/NU_MonoLVX_RGB_RW.png"
                     alt="kanbas-logo" class="img-fluid">
             </a>
-            <ul class="nav nav-flush mb-auto flex-column text-center d-flex bg-white">
-                <li class="nav-item active py-2 bg-white text-danger">
-                    <a href="/Kanbas/Account/Profile/screen.html">
+            <ul class="nav nav-flush mb-auto flex-column text-center d-flex bg-white sidebar-list">
+                <li class="nav-item active py-2 bg-white text-danger active-nav-item">
+                    <a href="/Kanbas/Account/Profile/">
                         <i class="fa-regular fa-user fa-xl" style="color: gray;"></i>
                         <div class="mt-1"></div>
-                        <span class="text-danger">Account</span>
+                        <span>Account</span>
                     </a>
                 </li>
 
                 <li class="nav-item py-2 bg-black">
-                    <a href="/Kanbas/Account/Profile/screen.html">
+                    <a href="/Kanbas/Dashboard/">
                         <i class="fa-solid fa-gauge fa-xl" style="color: #ff0000;"></i>
                         <div class="mt-1"></div>
                         Dashboard
@@ -55,7 +55,7 @@
                 </li>
 
                 <li class="nav-item py-2 bg-black">
-                    <a href="/Kanbas/Account/Profile/screen.html">
+                    <a href="/Kanbas/Courses/Home">
                         <i class="fa-solid fa-book fa-xl" style="color: #ff0000;"></i>
                         <div class="mt-1"></div>
                         Courses
@@ -167,15 +167,13 @@
                     </div>
                     <div class="flex-grow-1 flex-shrink-0">
                         <a href="./edit.html">
-                            <button type="button" class="btn btn-light btn-sm float-end">
+                            <button type="button" class="btn btn-light btn-sm float-end align-items-center">
                                 <i class="fa-solid fa-pencil"></i>
                                 Edit Profile
                             </button>
                         </a>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </main>

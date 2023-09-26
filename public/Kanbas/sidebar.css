@@ -24,20 +24,21 @@ main {
     /* Equivalent to Bootstrap's py-2 */
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a span {
-    color: indianred;
-    text-decoration: none;
-}
-
-a i {
-    color: grey;
-}
-
-ul li a {
+.sidebar-list li a {
     display: block;
+}
+
+/* .active-nav-item {
+    text-decoration: none;
+    color: indianred;
+} */
+
+.active-nav-item a span {
+    text-decoration: none;
+    color: indianred;
+}
+
+.active-nav-item {
+    background-color: white !important;
+    text-decoration: none;
 }
