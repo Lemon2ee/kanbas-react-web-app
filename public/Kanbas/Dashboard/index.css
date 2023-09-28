@@ -1,0 +1,24 @@
+.custom-flex-container {
+    justify-content: space-around;
+}
+
+.custom-flex-item {
+    flex-basis: calc(25% - 10px);
+    margin: 5px;
+}
+
+@media (max-width: 1000px) {
+    .custom-flex-item {
+        flex-basis: calc(33.333% - 10px);
+    }
+}
+
+@media (max-width: 665px) {
+    .custom-flex-item {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+.card {
+    width: 100%;
+}
