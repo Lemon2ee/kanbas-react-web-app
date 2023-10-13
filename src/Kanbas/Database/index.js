@@ -1,4 +1,7 @@
 import courses from "./courses.json";
-export default {
+
+const databaseExport = {
     courses,
 };
+
+export default databaseExport
