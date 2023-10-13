@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import Labs from "./labs";
 import HelloWorld from "./labs/a3/HelloWorld";
-import Kanbas from "./kanbas";
+import Kanbas from "./Kanbas";
 import {HashRouter} from "react-router-dom";
 import {Routes, Route, Navigate} from "react-router-dom";
 
