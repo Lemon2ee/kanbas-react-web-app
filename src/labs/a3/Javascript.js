@@ -9,6 +9,7 @@ import House from "./House";
 import Spread from "./Spread";
 import Destructing from "./Destructing";
 import FunctionDestructing from "./FunctionDestructing";
+import PathParameters from "./PathParameters";
 
 
 function JavaScript() {
@@ -27,6 +28,7 @@ function JavaScript() {
             <Spread />
             <Destructing />
             <FunctionDestructing />
+            <PathParameters />
         </div>
     );
 }
