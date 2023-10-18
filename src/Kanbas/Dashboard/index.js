@@ -15,23 +15,21 @@ function Dashboard() {
     };
 
     return (
-        <div>
-            <div className={"m-3"}>
-                <h1>Dashboard</h1>
+        <div className={"m-3 flex-grow-1"}>
+            <h1>Dashboard</h1>
+            <hr/>
+            <h3>
+                Published Courses ({courses.length})
+            </h3>
 
-                <hr/>
-
-                <h3>
-                    Published Courses ({courses.length})
-                </h3>
-            </div>
-
+            {/*table of cards*/}
             <Container fluid>
                 <Row>
                     {courses.map((course) => (
                         <Col key={course._id} xs={12} sm={6} md={4} lg={3}
                              className="d-flex justify-content-center m-2">
-                            <Link to="#" style={{textDecoration: 'none', color: 'inherit'}}>
+                            <Link to={`/Kanbas/Courses/${course._id}`}
+                                  style={{textDecoration: 'none', color: 'inherit'}}>
                                 <Card
                                     style={{
                                         width: '260px !important',
