@@ -18,7 +18,8 @@ function Courses() {
     const navigate = useNavigate();
 
     return (
-        <div className={"m-3 flex-grow-1"}>
+        <div className={"p-3 flex-grow-1 overflow-scroll"}
+             style={{height: '100vh'}}>
             {/*breadcrumb containing info*/}
             <Breadcrumb className={"mx-3"}>
                 {

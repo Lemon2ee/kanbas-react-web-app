@@ -44,7 +44,7 @@ const AssignmentsList = () => {
 
     return (
         <div className="list-group flex-grow-1 mx-3">
-            <a
+            <div
                 className="
                 list-group-item
                 list-group-item-action
@@ -59,7 +59,7 @@ const AssignmentsList = () => {
                     <FontAwesomeIcon icon={faPlus}/>
                     <FontAwesomeIcon icon={faEllipsisV} className="ps-2"/>
                 </div>
-            </a>
+            </div>
 
             {courseAssignments.map((assignment) => (
                 <Link

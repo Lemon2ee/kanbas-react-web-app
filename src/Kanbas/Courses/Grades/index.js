@@ -2,6 +2,7 @@ import db from "../../Database";
 import {useParams} from "react-router-dom";
 import "./GradesTable.css"
 import React from "react";
+import GradesHeader from "./GradesHeader";
 
 function Grades() {
     const {courseId} = useParams();
@@ -22,8 +23,8 @@ function Grades() {
     };
 
     return (
-        <div>
-            <h1>Grades</h1>
+        <div style={{height: '100vh', maxHeight: '100vh', overflowY: 'auto'}}>>
+            <GradesHeader/>
             <div className="table-responsive">
                 <table className="table table-striped table-bordered my-3">
                     <thead>

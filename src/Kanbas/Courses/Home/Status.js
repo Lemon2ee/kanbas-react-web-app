@@ -36,9 +36,9 @@ const CourseStatus = () => {
                         {icon: faChartLine, text: 'New Analytics'},
                         {icon: faBell, text: 'View Course Notifications'}
                     ].map((item, index) => (
-                        <a href="#" className="list-group-item list-group-item-action" key={index}>
+                        <div className="list-group-item list-group-item-action" key={index}>
                             <FontAwesomeIcon icon={item.icon}/> {item.text}
-                        </a>
+                        </div>
                     ))}
                 </div>
 
@@ -55,11 +55,11 @@ const CourseStatus = () => {
                     </div>
                     <div className="float-end" style={{display: 'inline-block'}}>
                         <FontAwesomeIcon icon={faCalendarAlt}/>
-                        <a href="#"
-                           className={"mx-1"}
-                           style={{textDecoration: 'none', color: 'indianred'}}>
+                        <div
+                            className={"mx-1"}
+                            style={{textDecoration: 'none', color: 'indianred'}}>
                             <span>View Calendar</span>
-                        </a>
+                        </div>
                     </div>
                     <hr/>
                 </div>
@@ -74,9 +74,9 @@ const CourseStatus = () => {
                         <div key={index}>
                             <p>
                                 <FontAwesomeIcon icon={farCalendarAlt} className="me-2"/>
-                                <a href="#" className="text-decoration-none" style={{color: 'indianred'}}>
+                                <div className="text-decoration-none" style={{color: 'indianred'}}>
                                     {event.text}
-                                </a>
+                                </div>
                                 <br/>
                                 <span className="text-muted" style={{fontSize: 'small'}}>
                                     {event.course} {event.date}
