@@ -23,7 +23,7 @@ function Grades() {
     };
 
     return (
-        <div style={{height: '100vh', maxHeight: '100vh', overflowY: 'auto'}}>>
+        <div style={{height: '100vh', maxHeight: '100vh', overflowY: 'auto'}}>
             <GradesHeader/>
             <div className="table-responsive">
                 <table className="table table-striped table-bordered my-3">

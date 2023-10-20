@@ -55,11 +55,8 @@ const CourseStatus = () => {
                     </div>
                     <div className="float-end" style={{display: 'inline-block'}}>
                         <FontAwesomeIcon icon={faCalendarAlt}/>
-                        <div
-                            className={"mx-1"}
-                            style={{textDecoration: 'none', color: 'indianred'}}>
-                            <span>View Calendar</span>
-                        </div>
+                        <span className={"mx-1"}
+                              style={{textDecoration: 'none', color: 'indianred'}}>View Calendar</span>
                     </div>
                     <hr/>
                 </div>
@@ -72,16 +69,15 @@ const CourseStatus = () => {
                         {text: 'Lecture', date: 'Sep 11 at 6pm', course: 'CS5610 06 SP23'}
                     ].map((event, index) => (
                         <div key={index}>
-                            <p>
+                            <div>
                                 <FontAwesomeIcon icon={farCalendarAlt} className="me-2"/>
                                 <div className="text-decoration-none" style={{color: 'indianred'}}>
                                     {event.text}
                                 </div>
-                                <br/>
                                 <span className="text-muted" style={{fontSize: 'small'}}>
                                     {event.course} {event.date}
                                 </span>
-                            </p>
+                            </div>
                         </div>
                     ))}
                 </div>
