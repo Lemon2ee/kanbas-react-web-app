@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import db from "../../../Database";
 import {Button, Form} from 'react-bootstrap';
 import Dropdown from "react-bootstrap/Dropdown";
@@ -9,12 +9,12 @@ function AssignmentEditor() {
     const {assignmentId} = useParams();
 
 
-    // const {courseId} = useParams();
-    // const navigate = useNavigate();
-    // const handleSave = () => {
-    //     console.log("Actually saving assignment TBD in later assignments");
-    //     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-    // };
+    const {courseId} = useParams();
+    const navigate = useNavigate();
+    const handleSave = () => {
+        console.log("Actually saving assignment TBD in later assignments");
+        navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+    };
     const [assignment, setAssignment] = useState(db.assignments.find(
         (assignment) => assignment._id === assignmentId));
     const [description, setDescription] = useState('This assignment describes how...');
@@ -247,7 +247,7 @@ function AssignmentEditor() {
                         <Button variant="secondary" className="me-2">
                             Cancel
                         </Button>
-                        <Button variant="danger">
+                        <Button variant="danger" onClick={handleSave}>
                             Save
                         </Button>
                     </div>
