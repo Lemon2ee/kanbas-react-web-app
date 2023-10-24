@@ -1,137 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Website</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Kanbas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/e0d3d075c8.js" crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
     <style>
-      table {
-        border-collapse: collapse;
-      }
+        .nav-item a {
+            text-decoration: none !important;
+            color: #ffffff;
+        }
 
-      td {
-        vertical-align: top;
-      }
+        li a {
+            text-decoration: none !important;
+            color: indianred;
+        }
 
-      .column {
-        flex: 1; /* Allow columns to expand or collapse based on content */
-        padding: 10px; /* Add some padding to each column */
-      }
-
-      .remove {
-        display: inline-block;
-        margin-left: 10px;
-      }
+        .nav-item {
+            font-size: small;
+        }
     </style>
-  </head>
+    <link href="../../sidebar.css" rel="stylesheet">
+</head>
 
-  <body>
-    <table>
-      <tr>
-        <!-- Column 1 -->
-        <td class="column">
-          <ul>
-            <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Studio</a></li>
-            <li><a href="#">Commons</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </td>
+<body>
 
-        <!-- Column 2 -->
-        <td class="column">
-          <ul>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="/Kanbas/Account/Profile/screen.html">Profile</a></li>
-            <li><a href="#">Files</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">ePortfolios</a></li>
-            <li><a href="#">Shared Content</a></li>
-            <li><a href="#">The Hub</a></li>
-            <li><a href="#">Qwickly Course Tools</a></li>
-            <li><a href="#">Global Announcements</a></li>
-          </ul>
-        </td>
+    <main>
+        <!-- Kanbas nav sidebar -->
+        <div class="d-flex flex-column flex-shrink-0 flex-grow-1 bg-black sidebar-list"
+            style="width: 80px; max-width: 80px; height: 100vh;">
+            <a href="/" class="d-block p-2 link-dark bg-black">
+                <img src="https://instructure-uploads.s3.amazonaws.com/account_145230000000000001/attachments/949/NU_MonoLVX_RGB_RW.png"
+                    alt="kanbas-logo" class="img-fluid">
+            </a>
+            <ul class="nav nav-flush mb-auto flex-column text-center d-flex bg-white">
+                <li class="nav-item active py-2 bg-white text-danger">
+                    <a href="/Kanbas/Account/Profile/">
+                        <i class="fa-regular fa-user fa-xl" style="color: gray;"></i>
+                        <div class="mt-1"></div>
+                        <span class="text-danger">Account</span>
+                    </a>
+                </li>
 
-        <td class="column">
-          <h1>Jose Annunziato</h1>
-          Name*: <input type="text" />
-          Pronouns:
-          <select>
-            <option value="he">He/Him</option>
-            <option value="she">She/Her</option>
-            <option value="they">They/Them</option>
-          </select>
-          <p>Title: <input type="text" /></p>
+                <li class="nav-item py-2 bg-black">
+                    <a href="/Kanbas/Dashboard/">
+                        <i class="fa-solid fa-gauge fa-xl" style="color: #ff0000;"></i>
+                        <div class="mt-1"></div>
+                        Dashboard
+                    </a>
+                </li>
 
-          <h2>Contact</h2>
-          <p>
-            No registered services, you can add some on the
-            <a href="#">settings</a> page
-          </p>
+                <li class="nav-item py-2 bg-black">
+                    <a href="/Kanbas/Courses/Home/">
+                        <i class="fa-solid fa-book fa-xl" style="color: #ff0000;"></i>
+                        <div class="mt-1"></div>
+                        Courses
+                    </a>
+                </li>
 
-          <h2>Contact</h2>
-          <p>
-            No registered services, you can add some on the
-            <a href="#">settings</a> page
-          </p>
+                <li class="nav-item active py-2 bg-black">
+                    <a href="#">
+                        <i class="fa-solid fa-calendar-days fa-xl" style="color: #ff0000;"></i>
+                        <div class="mt-1"></div>
+                        Calendar
+                    </a>
+                </li>
 
-          <h2>Biography</h2>
-          <p
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              width: max-content;
-              margin: auto;
-            "
-          >
-            Faculty, Software Engineer, AI, Space, and renewable enthusiast
-          </p>
-          <textarea style="width: 100%; box-sizing: border-box" rows="3">
-Faculty, Software Engineer, AI, Space, and renewable enthusiast
-</textarea
-          >
+                <li class="nav-item active py-2 bg-black">
+                    <a href="#">
+                        <i class="fa-solid fa-inbox fa-xl" style="color: #ff0000;"></i>
+                        <div class="mt-1"></div>
+                        Inbox
+                    </a>
+                </li>
 
-          <h2>Links</h2>
-          <ul>
-            <li><a href="#">YouTube</a> Links to another website</li>
-          </ul>
+                <li class="nav-item active py-2 bg-black">
+                    <a href="#">
+                        <i class="fa-solid fa-clock fa-xl" style="color: #ff0000;"></i>
+                        <div class="mt-1"></div>
+                        History
+                    </a>
+                </li>
 
-          <div style="text-align: center">
-            <div style="display: inline-block; text-align: center">
-              <h3>Title</h3>
-              <input type="text" />
+                <li class="nav-item active py-2 bg-black">
+                    <a href="#">
+                        <i class="fa-brands fa-youtube fa-xl" style="color: #ff0000;"></i>
+                        <div class="mt-1"></div>
+                        Studios
+                    </a>
+                </li>
+
+                <li class="nav-item active py-2 bg-black">
+                    <a href="#">
+                        <i class="fa-solid fa-share-from-square fa-xl" style="color: #ff0000;"></i>
+                        <div class="mt-1"></div>
+                        Commons
+                    </a>
+                </li>
+
+                <li class="nav-item active py-2 bg-black">
+                    <a href="#">
+                        <i class="fa-regular fa-circle-question fa-xl" style="color: #ff0000;"></i>
+                        <div class="mt-1"></div>
+                        Info
+                    </a>
+                </li>
+
+                <li class="bg-black flex-grow-1 flex-shrink-0"></li>
+            </ul>
+        </div>
+
+        <!-- main content section including nav bar and profile -->
+        <div class="d-flex flex-grow-1 flex-column overflow-auto">
+            <!-- header of main page -->
+            <div class="px-4 pt-4 pb-2">
+                <i class="fa-solid fa-bars fa-xl" style="color: #ff0000;"></i>
+                <span class="px-4">Jose Annunziato's Profile</span>
             </div>
-            <span class="arrow">&#10140;</span>
-            <div style="display: inline-block; text-align: center">
-              <h3>URL</h3>
-              <input type="text" />
+
+            <!-- breaking line padded left and right -->
+            <hr class="mx-3">
+
+            <!-- flex box containing account nav bar and profile content -->
+            <div class="d-flex flex-grow-1 px-4">
+                <div style="width: 8.5rem; max-height: 100vh;" class="position-sticky top-0">
+                    <ul class="list-unstyled">
+                        <li class="p-2"><a href="#">Notifications</a></li>
+                        <li class="p-1 border-start border-dark border-2"><a href="/Kanbas/Account/Profile/"
+                                class="text-dark">Profile</a></li>
+                        <li class="p-2"><a href="#">Files</a></li>
+                        <li class="p-2"><a href="#">Settings</a></li>
+                        <li class="p-2"><a href="#">ePortfolios</a></li>
+                        <li class="p-2"><a href="#">Shared Content</a></li>
+                        <li class="p-2"><a href="#">The Hub</a></li>
+                        <li class="p-2"><a href="#">Qwickly Course Tools</a></li>
+                        <li class="p-2"><a href="#">Global Announcements</a></li>
+                    </ul>
+                </div>
+
+                <div class="px-4 d-flex flex-grow-1 align-items-start">
+                    <div class="d-flex flex-column py-4 page-content">
+                        <i class="fa-solid fa-user-large" style="font-size: 150px;"></i>
+                        <span>Name*: </span><input type="text" class="form-control" />
+                        <span>Pronouns:</span>
+                        <select class="form-select">
+                            <option value="he">He/Him</option>
+                            <option value="she">She/Her</option>
+                            <option value="they">They/Them</option>
+                        </select>
+                        <span>Title: <input type="text" class="form-control" /></span>
+
+                        <h2>Contact</h2>
+                        <p>
+                            No registered services, you can add some on the
+                            <a href="#">settings</a> page
+                        </p>
+
+                        <h2>Biography</h2>
+                        <textarea class="form-control" rows="4">
+Faculty, Software Engineer, AI, Space, and renewable enthusiast</textarea>
+
+                        <h2>Links</h2>
+
+                        <div class="container">
+                            <div class="row align-items-center text-center" style="height: 2em;">
+                                <!-- Duplicate of the input for Title but hidden -->
+                                <div class="col-md-auto">
+                                    <h5 style="margin: 0;">Title</h5>
+                                    <input type="text" class="invisible" />
+                                </div>
+                                <!-- Duplicate of the arrow but hidden -->
+                                <div class="col-md-auto">
+                                    <span class="arrow invisible">&#10140;</span>
+                                </div>
+                                <!-- Duplicate of the input for URL but hidden -->
+                                <div class="col-md-auto">
+                                    <h5 style="margin: 0;">URL</h5>
+                                    <input type="text" class="invisible" />
+                                </div>
+                                <div class="col-md-auto">
+                                    <button class="btn invisible">
+                                        </a><i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <!-- Input for the Title -->
+                                <div class="col-md-auto">
+                                    <input type="text" />
+                                </div>
+                                <!-- Arrow -->
+                                <div class="col-md-auto">
+                                    <span class="arrow">&#10140;</span>
+                                </div>
+                                <!-- Input for the URL -->
+                                <div class="col-md-auto">
+                                    <input type="text" />
+                                </div>
+                                <div class="col-md-auto">
+                                    <button class="btn">
+                                        </a><i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn btn-light border-dark">Add another link</button>
+                        </div>
+
+                        <hr>
+
+                        <div>
+                            <div class="float-end">
+                                <a href="/Kanbas/Account/Profile/"><button
+                                        class="btn btn-light border-dark">Cancel</button></a>
+                                <a href="/Kanbas/Account/Profile/"><button class="btn btn-danger border-dark">
+                                        Save Profile</button></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="flex-grow-1 flex-shrink-0">
+                        <a href="/Kanbas/Account/Profile/">
+                            <button type="button" class="btn btn-light btn-sm float-end align-items-center">
+                                <i class="fa-solid fa-pencil"></i>
+                                Cancel Editing
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+
             </div>
-            <span class="remove"><a href="#">Remove</a></span>
-          </div>
-          <div>
-            <button>Add another link</button>
-          </div>
-          <div>
-            <button>Cancel</button>
-            <a href="/Kanbas/Account/Profile/screen.html"
-              ><button>Save Profile</button></a
-            >
-          </div>
-          <div>
-            <button>Edit Profile</button>
-            <a href="/Kanbas/Account/Profile/screen.html"
-              ><button>Cancel Editing</button></a
-            >
-          </div>
-        </td>
-      </tr>
-    </table>
-  </body>
+        </div>
+    </main>
+</body>
+
 </html>
