@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {useParams} from "react-router-dom";
 import db from "../../Database";
 import {Accordion} from "react-bootstrap";
@@ -9,7 +9,7 @@ import {faCheckCircle, faEllipsisV, faGripVertical, faLink, faPlus} from "@forta
 
 function ModuleList() {
     const {courseId} = useParams();
-    const modules = db.modules;
+    const [modules, setModules] = useState(db.modules);
     const sections = ["Resources", "Required Textbook", "Week 0", "Week 1", "Week 2"];
 
     return (
@@ -71,8 +71,8 @@ function ModuleList() {
                                                                 <span
                                                                     style={{color: 'indianred'}}
                                                                 >
-        {module.description}
-    </span>
+                                                                    {module.description}
+                                                                </span>
                                                             </div>
                                                             <div>
                                                                 <FontAwesomeIcon
