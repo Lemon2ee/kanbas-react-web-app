@@ -11,6 +11,11 @@ function ModuleList() {
     const {courseId} = useParams();
     const [modules, setModules] = useState(db.modules);
     const sections = ["Resources", "Required Textbook", "Week 0", "Week 1", "Week 2"];
+    const [module, setModule] = useState({
+        name: "New Module",
+        description: "New Description",
+        course: courseId,
+    });
 
     return (
         <div className={"flex-grow-1"}>
