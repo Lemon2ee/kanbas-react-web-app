@@ -20,6 +20,21 @@ function ModuleList() {
     return (
         <div className={"flex-grow-1"}>
             <ul>
+                <li className="list-group-item">
+                    <button>Add</button>
+                    <input value={module.name}
+                           onChange={(e) => setModule({
+                               ...module, name: e.target.value
+                           })}
+                    />
+                    <textarea value={module.description}
+                              onChange={(e) => setModule({
+                                  ...module, description: e.target.value
+                              })}
+                    />
+                </li>
+
+
                 {
                     sections.map((section, index) => (  // Added 'index' as second parameter in the map function
                             <Accordion key={index} className={"full-width-accordion my-3"}>
