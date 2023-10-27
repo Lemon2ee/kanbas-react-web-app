@@ -12,7 +12,6 @@ import ObjectStateVariable from "./ObjectStateVariable";
 import ArrayStateVariable from "./ArrayStateVariable";
 import ParentStateComponent from "./ParentStateComponent";
 import ReduxExamples from "./ReduxExamples";
-import Exam from "./Exam1";
 
 const Assignment4 = () => {
     function sayHello() {
@@ -22,7 +21,6 @@ const Assignment4 = () => {
     return (
         <>
             <h1>Assignment 4</h1>
-            <Exam/>
             <ReduxExamples/>
             <Add a={1} b={2}/>
             <ClickEvent/>
