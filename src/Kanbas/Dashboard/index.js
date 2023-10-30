@@ -53,13 +53,6 @@ function Dashboard(
                         Add
                     </button>
 
-                    <button className={"btn btn-dark m-1"}
-                            onClick={(event) => {
-                                event.preventDefault();
-                                deleteCourse(course._id);
-                            }}>
-                        Delete
-                    </button>
 
                     <button className={"btn btn-dark m-1"} onClick={updateCourse}>
                         Update
@@ -107,6 +100,14 @@ function Dashboard(
                                                             setCourse(course);
                                                         }}>
                                                     Edit
+                                                </button>
+
+                                                <button className={"btn btn-dark m-1"}
+                                                        onClick={(event) => {
+                                                            event.preventDefault();
+                                                            deleteCourse(course._id);
+                                                        }}>
+                                                    Delete
                                                 </button>
 
                                             </Card.Title>
