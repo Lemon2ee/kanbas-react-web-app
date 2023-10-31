@@ -2,9 +2,9 @@ import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCheckCircle, faEllipsisV, faFileLines, faGripVertical, faPlus} from '@fortawesome/free-solid-svg-icons';
 import {Link, useParams} from "react-router-dom";
-import db from "../../Database";
+import {useSelector} from "react-redux";
 
-const AssignmentItem = ({title, weekInfo, dueDate, points}) => {
+const AssignmentItem = ({title, description, dueDate, points}) => {
     return (
         <div className={"d-flex justify-content-between align-items-center green-border"}>
             <div className="d-flex align-items-center">
@@ -16,7 +16,7 @@ const AssignmentItem = ({title, weekInfo, dueDate, points}) => {
                 <div style={{display: 'inline-block'}}>
                     <h5>{title}</h5>
                     <span className="text-muted">
-                        {weekInfo}
+                        {description}
                     </span>
                     <br/>
                     <span>
@@ -38,9 +38,8 @@ const AssignmentItem = ({title, weekInfo, dueDate, points}) => {
 
 const AssignmentsList = () => {
     const {courseId} = useParams();
-    const assignments = db.assignments;
-    const courseAssignments = assignments.filter(
-        (assignment) => assignment.course === courseId);
+    const assignments = useSelector((state) => state.assignmentReducer.assignments);
+
 
     return (
         <div className="list-group flex-grow-1 mx-3">
@@ -61,16 +60,17 @@ const AssignmentsList = () => {
                 </div>
             </div>
 
-            {courseAssignments.map((assignment) => (
+            {assignments.filter(
+                (assignment) => assignment.course === courseId).map((assignment) => (
                 <Link
                     key={assignment._id}
                     to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
                     className="list-group-item">
                     <AssignmentItem
                         title={assignment.title}
-                        weekInfo="Week 0 - SETUP - Week starting on Monday"
-                        dueDate="Sep 18. 2022 at 11:59PM"
-                        points="100"
+                        description={assignment['description'] || "Week 0 - SETUP - Week starting on Monday"}
+                        dueDate={assignment['due-date'] || "Sep 18. 2022 at 11:59PM"}
+                        points={assignment['points-possible' || "100"]}
                     />
                 </Link>
             ))}

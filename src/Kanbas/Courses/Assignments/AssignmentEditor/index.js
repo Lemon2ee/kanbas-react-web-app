@@ -1,22 +1,24 @@
 import React, {useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import db from "../../../Database";
 import {Button, Form} from 'react-bootstrap';
 import Dropdown from "react-bootstrap/Dropdown";
-
+import {useDispatch, useSelector} from "react-redux";
+import {setAssignment} from "../assignmentsReducer";
 
 function AssignmentEditor() {
-    const {assignmentId} = useParams();
-
-
-    const {courseId} = useParams();
+    const {courseId, assignmentId} = useParams();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleSave = () => {
         console.log("Actually saving assignment TBD in later assignments");
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
-    const [assignment, setAssignment] = useState(db.assignments.find(
-        (assignment) => assignment._id === assignmentId));
+    const assignments = useSelector((state) => state.assignmentReducer.assignments);
+    const defaultAssignment = useSelector((state) => state.assignmentReducer.assignment)
+    const assignment = assignments.find(
+        (assignment) => assignment['course'] === courseId && assignment['_id'] === assignmentId
+    ) || defaultAssignment;
+
     const [description, setDescription] = useState('This assignment describes how...');
     const [points, setPoints] = useState('100');
     const [exclude, setExclude] = useState(false);
@@ -45,7 +47,10 @@ function AssignmentEditor() {
                         id="assignment"
                         rows="3"
                         value={assignment.title}
-                        onChange={(e) => setAssignment(e.target.value)}>
+                        onChange={(e) => dispatch(setAssignment({
+                            ...assignment,
+                            title: e.target.value
+                        }))}>
                     </textarea>
                     </div>
                     <div className="form-group mt-3">
