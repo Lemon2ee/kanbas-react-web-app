@@ -2,7 +2,8 @@ import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCheckCircle, faEllipsisV, faFileLines, faGripVertical, faPlus} from '@fortawesome/free-solid-svg-icons';
 import {Link, useParams} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {setAssignment} from "./assignmentsReducer";
 
 const AssignmentItem = ({title, description, dueDate, points}) => {
     return (
@@ -39,7 +40,7 @@ const AssignmentItem = ({title, description, dueDate, points}) => {
 const AssignmentsList = () => {
     const {courseId} = useParams();
     const assignments = useSelector((state) => state.assignmentReducer.assignments);
-
+    const dispatch = useDispatch()
 
     return (
         <div className="list-group flex-grow-1 mx-3">
@@ -65,6 +66,9 @@ const AssignmentsList = () => {
                 <Link
                     key={assignment._id}
                     to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                    onClick={() => {
+                        dispatch(setAssignment(assignment))
+                    }}
                     className="list-group-item">
                     <AssignmentItem
                         title={assignment.title}

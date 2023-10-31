@@ -3,21 +3,28 @@ import {useNavigate, useParams} from "react-router-dom";
 import {Button, Form} from 'react-bootstrap';
 import Dropdown from "react-bootstrap/Dropdown";
 import {useDispatch, useSelector} from "react-redux";
-import {setAssignment} from "../assignmentsReducer";
+import {addAssignment, setAssignment, updateAssignment} from "../assignmentsReducer";
 
 function AssignmentEditor() {
-    const {courseId, assignmentId} = useParams();
+    const {courseId} = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleSave = () => {
-        console.log("Actually saving assignment TBD in later assignments");
+        const assignmentAdding = {
+            ...assignment,
+            course: courseId,
+        }
+
+        if (window.location.href.endsWith('/new')) {
+            dispatch(addAssignment(assignmentAdding));
+        } else {
+            dispatch(updateAssignment(assignmentAdding));
+        }
+
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+
     };
-    const assignments = useSelector((state) => state.assignmentReducer.assignments);
-    const defaultAssignment = useSelector((state) => state.assignmentReducer.assignment)
-    const assignment = assignments.find(
-        (assignment) => assignment['course'] === courseId && assignment['_id'] === assignmentId
-    ) || defaultAssignment;
+    const assignment = useSelector((state) => state.assignmentReducer.assignment);
 
     const [description, setDescription] = useState('This assignment describes how...');
     const [points, setPoints] = useState('100');
@@ -37,7 +44,6 @@ function AssignmentEditor() {
         <div>
             <h2>{assignment.title}</h2>
 
-
             <div className="flex-grow-1 container px-4">
                 <div className="row">
                     <span>Assignment Name</span>
@@ -46,11 +52,13 @@ function AssignmentEditor() {
                         className="form-control"
                         id="assignment"
                         rows="3"
-                        value={assignment.title}
-                        onChange={(e) => dispatch(setAssignment({
-                            ...assignment,
-                            title: e.target.value
-                        }))}>
+                        value={assignment['title']}
+                        onChange={(e) => {
+                            dispatch(setAssignment({
+                                ...assignment,
+                                title: e.target.value
+                            }))
+                        }}>
                     </textarea>
                     </div>
                     <div className="form-group mt-3">
