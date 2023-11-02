@@ -75,11 +75,11 @@ const AssignmentsList = () => {
                         <AssignmentItem
                             title={assignment.title}
                             description={assignment['description'] || "Week 0 - SETUP - Week starting on Monday"}
-                            dueDate={assignment['due-date'] || "Sep 18. 2022 at 11:59PM"}
-                            points={assignment['points-possible' || "100"]}
+                            dueDate={assignment['dueDate'] || "Sep 18. 2022 at 11:59PM"}
+                            points={assignment['points'] || "100"}
                         />
                     </Link>
-                    <DeleteAlert/>
+                    <DeleteAlert assignment={assignment}/>
                 </div>
 
 

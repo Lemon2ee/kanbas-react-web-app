@@ -2,46 +2,101 @@
   {
     "_id": "A101",
     "title": "Propulsion Assignment",
-    "course": "RS101"
+    "course": "RS101",
+    "dueDate": "2023-04-05",
+    "availableFromDate": "2023-03-20",
+    "availableUntilDate": "2023-04-04",
+    "description": "Design and simulation of a propulsion system for a low-earth orbit satellite.",
+    "points": 50
   },
   {
     "_id": "A102",
     "title": "Combustion Analysis",
-    "course": "RS101"
+    "course": "RS101",
+    "dueDate": "2023-05-10",
+    "availableFromDate": "2023-04-25",
+    "availableUntilDate": "2023-05-09",
+    "description": "Detailed analysis of the combustion process in solid and liquid rocket engines.",
+    "points": 40
   },
   {
     "_id": "A103",
     "title": "Nozzle Design Project",
-    "course": "RS101"
+    "course": "RS101",
+    "dueDate": "2023-06-20",
+    "availableFromDate": "2023-06-05",
+    "availableUntilDate": "2023-06-19",
+    "description": "Design a nozzle for a rocket engine and perform simulations to test efficiency and thrust.",
+    "points": 60
   },
   {
     "_id": "A201",
     "title": "Aerodynamics Quiz",
-    "course": "RS102"
+    "course": "RS102",
+    "dueDate": "2023-07-11",
+    "availableFromDate": "2023-06-26",
+    "availableUntilDate": "2023-07-10",
+    "description": "A quiz on aerodynamics principles, including drag, lift, and airflow analysis.",
+    "points": 20
   },
   {
     "_id": "A202",
     "title": "Flow Analysis",
-    "course": "RS102"
+    "course": "RS102",
+    "dueDate": "2023-08-15",
+    "availableFromDate": "2023-07-31",
+    "availableUntilDate": "2023-08-14",
+    "description": "Computational fluid dynamics project focusing on the analysis of air flow over an airfoil.",
+    "points": 50
   },
   {
     "_id": "A203",
     "title": "Heating Analysis",
-    "course": "RS102"
+    "course": "RS102",
+    "dueDate": "2023-09-12",
+    "availableFromDate": "2023-08-28",
+    "availableUntilDate": "2023-09-11",
+    "description": "Study and report on the heating effects during high-speed flight in the Earth's atmosphere.",
+    "points": 40
   },
   {
     "_id": "A301",
     "title": "Structural Design Task",
-    "course": "RS103"
+    "course": "RS103",
+    "dueDate": "2023-10-07",
+    "availableFromDate": "2023-09-22",
+    "availableUntilDate": "2023-10-06",
+    "description": "Create a structural design for a small satellite, ensuring it can withstand launch loads.",
+    "points": 70
   },
   {
     "_id": "A302",
     "title": "Orbital Calculations",
-    "course": "RS103"
+    "course": "RS103",
+    "dueDate": "2023-11-10",
+    "availableFromDate": "2023-10-26",
+    "availableUntilDate": "2023-11-09",
+    "description": "Perform a set of orbital calculations to predict the trajectory of a satellite over time.",
+    "points": 30
   },
   {
     "_id": "A303",
     "title": "Systems Engineering Exam",
-    "course": "RS103"
+    "course": "RS103",
+    "dueDate": "2023-12-01",
+    "availableFromDate": "2023-11-16",
+    "availableUntilDate": "2023-11-30",
+    "description": "An exam that tests knowledge on the integration of spacecraft systems and lifecycle.",
+    "points": 100
+  },
+  {
+    "_id": "A304",
+    "title": "Spacecraft Dynamics Midterm",
+    "course": "RS103",
+    "dueDate": "2023-12-15",
+    "availableFromDate": "2023-11-20",
+    "availableUntilDate": "2023-12-14",
+    "description": "Midterm exam covering all aspects of spacecraft dynamics from the RS103 course. Topics include kinematics, orbital mechanics, and attitude control.",
+    "points": 100
   }
 ]

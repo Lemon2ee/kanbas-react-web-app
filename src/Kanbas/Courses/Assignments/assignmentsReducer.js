@@ -10,7 +10,8 @@ const initialState = {
         dueDate: "",
         availableFromDate: "",
         availableUntilDate: "",
-        description: ""
+        description: "",
+        points: 0
     },
 };
 
@@ -36,6 +37,11 @@ const assignmentsSlice = createSlice({
                 }
             });
         },
+        deleteAssignment: (state, action) => {
+            state.assignments = state.assignments.filter(
+                (assignment) => assignment._id !== action.payload._id
+            );
+        },
         setAssignment: (state, action) => {
             state.assignment = action.payload;
         },
@@ -45,6 +51,6 @@ const assignmentsSlice = createSlice({
 
 export const {
     addAssignment, resetAssignment,
-    updateAssignment, setAssignment
+    updateAssignment, setAssignment, deleteAssignment
 } = assignmentsSlice.actions;
 export default assignmentsSlice.reducer;

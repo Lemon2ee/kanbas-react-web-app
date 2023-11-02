@@ -1,10 +1,12 @@
 import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import {useDispatch} from "react-redux";
+import {deleteAssignment} from "./assignmentsReducer";
 
-export default function DeleteAlert() {
+export default function DeleteAlert({assignment}) {
     const [show, setShow] = useState(false);
-
+    const dispatch = useDispatch()
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -26,10 +28,17 @@ export default function DeleteAlert() {
                 </Modal.Header>
                 <Modal.Body>Are you sure you want to delete this module?</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="secondary" onClick={
+                        () => {
+                            handleClose()
+                        }}>
                         Cancel
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={
+                        () => {
+                            dispatch(deleteAssignment(assignment))
+                            handleClose()
+                        }}>
                         Ok
                     </Button>
                 </Modal.Footer>
