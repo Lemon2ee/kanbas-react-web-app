@@ -32,8 +32,7 @@ function AssignmentEditor() {
     const [assignmentGroup, setAssignmentGroup] = useState('ASSIGNMENTS');
     const [displayGradeAs, setDisplayGradeAs] = useState('Percentage');
     const [submissionType, setSubmissionType] = useState('Online');
-    // eslint-disable-next-line 
-    const [assignTo, setAssignTo] = useState('Everyone');
+    const assignTo = 'Everyone'
 
     return (
         <div>
