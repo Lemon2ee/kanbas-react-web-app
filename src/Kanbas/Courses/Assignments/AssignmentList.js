@@ -4,6 +4,7 @@ import {faCheckCircle, faEllipsisV, faFileLines, faGripVertical, faPlus} from '@
 import {Link, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {setAssignment} from "./assignmentsReducer";
+import DeleteAlert from "./DeleteAlert";
 
 const AssignmentItem = ({title, description, dueDate, points}) => {
     return (
@@ -63,20 +64,25 @@ const AssignmentsList = () => {
 
             {assignments.filter(
                 (assignment) => assignment.course === courseId).map((assignment) => (
-                <Link
-                    key={assignment._id}
-                    to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                    onClick={() => {
-                        dispatch(setAssignment(assignment))
-                    }}
-                    className="list-group-item">
-                    <AssignmentItem
-                        title={assignment.title}
-                        description={assignment['description'] || "Week 0 - SETUP - Week starting on Monday"}
-                        dueDate={assignment['due-date'] || "Sep 18. 2022 at 11:59PM"}
-                        points={assignment['points-possible' || "100"]}
-                    />
-                </Link>
+                <div className="list-group-item d-flex" key={assignment._id}>
+                    <Link
+                        to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                        className="list-group-item flex-grow-1 me-3"
+                        onClick={() => {
+                            dispatch(setAssignment(assignment))
+                        }}
+                    >
+                        <AssignmentItem
+                            title={assignment.title}
+                            description={assignment['description'] || "Week 0 - SETUP - Week starting on Monday"}
+                            dueDate={assignment['due-date'] || "Sep 18. 2022 at 11:59PM"}
+                            points={assignment['points-possible' || "100"]}
+                        />
+                    </Link>
+                    <DeleteAlert/>
+                </div>
+
+
             ))}
         </div>
     );
