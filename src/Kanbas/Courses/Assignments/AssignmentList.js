@@ -2,9 +2,11 @@ import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCheckCircle, faEllipsisV, faFileLines, faGripVertical, faPlus} from '@fortawesome/free-solid-svg-icons';
 import {Link, useParams} from "react-router-dom";
-import db from "../../Database";
+import {useDispatch, useSelector} from "react-redux";
+import {setAssignment} from "./assignmentsReducer";
+import DeleteAlert from "./DeleteAlert";
 
-const AssignmentItem = ({title, weekInfo, dueDate, points}) => {
+const AssignmentItem = ({title, description, dueDate, points}) => {
     return (
         <div className={"d-flex justify-content-between align-items-center green-border"}>
             <div className="d-flex align-items-center">
@@ -16,7 +18,7 @@ const AssignmentItem = ({title, weekInfo, dueDate, points}) => {
                 <div style={{display: 'inline-block'}}>
                     <h5>{title}</h5>
                     <span className="text-muted">
-                        {weekInfo}
+                        {description}
                     </span>
                     <br/>
                     <span>
@@ -38,9 +40,8 @@ const AssignmentItem = ({title, weekInfo, dueDate, points}) => {
 
 const AssignmentsList = () => {
     const {courseId} = useParams();
-    const assignments = db.assignments;
-    const courseAssignments = assignments.filter(
-        (assignment) => assignment.course === courseId);
+    const assignments = useSelector((state) => state.assignmentReducer.assignments);
+    const dispatch = useDispatch()
 
     return (
         <div className="list-group flex-grow-1 mx-3">
@@ -61,18 +62,27 @@ const AssignmentsList = () => {
                 </div>
             </div>
 
-            {courseAssignments.map((assignment) => (
-                <Link
-                    key={assignment._id}
-                    to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                    className="list-group-item">
-                    <AssignmentItem
-                        title={assignment.title}
-                        weekInfo="Week 0 - SETUP - Week starting on Monday"
-                        dueDate="Sep 18. 2022 at 11:59PM"
-                        points="100"
-                    />
-                </Link>
+            {assignments.filter(
+                (assignment) => assignment.course === courseId).map((assignment) => (
+                <div className="list-group-item d-flex" key={assignment._id}>
+                    <Link
+                        to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                        className="list-group-item flex-grow-1 me-3"
+                        onClick={() => {
+                            dispatch(setAssignment(assignment))
+                        }}
+                    >
+                        <AssignmentItem
+                            title={assignment.title}
+                            description={assignment['description'] || "Week 0 - SETUP - Week starting on Monday"}
+                            dueDate={assignment['dueDate'] || "Sep 18. 2022 at 11:59PM"}
+                            points={assignment['points'] || "100"}
+                        />
+                    </Link>
+                    <DeleteAlert assignment={assignment}/>
+                </div>
+
+
             ))}
         </div>
     );

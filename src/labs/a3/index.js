@@ -3,16 +3,19 @@ import Classes from "./Classes";
 import Styles from "./Styles";
 import ConditionalOutput from "./ConditionalOutput";
 import TodoList from "./todos/TodoList";
+
 function Assignment3() {
     return (
         <div>
             <h1>Assignment 3</h1>
-            <Javascript />
-            <Classes />
-            <Styles />
-            <ConditionalOutput />
-            <TodoList />
+            <TodoList/>
+            <Javascript/>
+            <Classes/>
+            <Styles/>
+            <ConditionalOutput/>
+            <TodoList/>
         </div>
     );
 }
+
 export default Assignment3;

@@ -4,7 +4,6 @@ import AssignmentList from "./AssignmentList";
 
 
 function Assignments() {
-
     return (
         <div>
             <AssignmentHeader/>

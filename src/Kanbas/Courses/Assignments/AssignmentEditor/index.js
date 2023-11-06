@@ -1,40 +1,42 @@
 import React, {useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import db from "../../../Database";
 import {Button, Form} from 'react-bootstrap';
 import Dropdown from "react-bootstrap/Dropdown";
-
+import {useDispatch, useSelector} from "react-redux";
+import {addAssignment, setAssignment, updateAssignment} from "../assignmentsReducer";
 
 function AssignmentEditor() {
-    const {assignmentId} = useParams();
-
-
     const {courseId} = useParams();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleSave = () => {
-        console.log("Actually saving assignment TBD in later assignments");
+        const assignmentAdding = {
+            ...assignment,
+            course: courseId,
+        }
+
+        if (window.location.href.endsWith('/new')) {
+            dispatch(addAssignment(assignmentAdding));
+        } else {
+            console.log(assignmentAdding);
+            dispatch(updateAssignment(assignmentAdding));
+        }
+
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+
     };
-    const [assignment, setAssignment] = useState(db.assignments.find(
-        (assignment) => assignment._id === assignmentId));
-    const [description, setDescription] = useState('This assignment describes how...');
-    const [points, setPoints] = useState('100');
+    const assignment = useSelector((state) => state.assignmentReducer.assignment);
+
     const [exclude, setExclude] = useState(false);
     const [notify, setNotify] = useState(false);
     const [assignmentGroup, setAssignmentGroup] = useState('ASSIGNMENTS');
     const [displayGradeAs, setDisplayGradeAs] = useState('Percentage');
     const [submissionType, setSubmissionType] = useState('Online');
-    // eslint-disable-next-line 
-    const [assignTo, setAssignTo] = useState('Everyone');
-    const [dueDate, setDueDate] = useState('2023-09-08');
-    const [availableFrom, setAvailableFrom] = useState('2023-09-08');
-    const [until, setUntil] = useState('');
-
+    const assignTo = 'Everyone'
 
     return (
         <div>
             <h2>{assignment.title}</h2>
-
 
             <div className="flex-grow-1 container px-4">
                 <div className="row">
@@ -44,8 +46,13 @@ function AssignmentEditor() {
                         className="form-control"
                         id="assignment"
                         rows="3"
-                        value={assignment.title}
-                        onChange={(e) => setAssignment(e.target.value)}>
+                        value={assignment['title']}
+                        onChange={(e) => {
+                            dispatch(setAssignment({
+                                ...assignment,
+                                title: e.target.value
+                            }))
+                        }}>
                     </textarea>
                     </div>
                     <div className="form-group mt-3">
@@ -53,8 +60,11 @@ function AssignmentEditor() {
                         className="form-control"
                         id="assignmentDescription"
                         rows="5"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}>
+                        value={assignment['description']}
+                        onChange={(e) => dispatch(setAssignment({
+                            ...assignment,
+                            description: e.target.value
+                        }))}>
                     </textarea>
                     </div>
                 </div>
@@ -69,8 +79,11 @@ function AssignmentEditor() {
                         <input
                             type="text"
                             className="form-control"
-                            value={points}
-                            onChange={(e) => setPoints(e.target.value)}/>
+                            value={assignment['points']}
+                            onChange={(e) => dispatch(setAssignment({
+                                ...assignment,
+                                points: e.target.value
+                            }))}/>
                     </div>
                 </div>
 
@@ -188,8 +201,11 @@ function AssignmentEditor() {
                             <Form.Control
                                 type="date"
                                 className="mt-2"
-                                value={dueDate}
-                                onChange={(e) => setDueDate(e.target.value)}
+                                value={assignment['dueDate']}
+                                onChange={(e) => dispatch(setAssignment({
+                                    ...assignment,
+                                    dueDate: e.target.value
+                                }))}
                             />
 
                             <div className="row py-4">
@@ -197,16 +213,22 @@ function AssignmentEditor() {
                                     <Form.Label><strong>Available From</strong></Form.Label>
                                     <Form.Control
                                         type="date"
-                                        value={availableFrom}
-                                        onChange={(e) => setAvailableFrom(e.target.value)}
+                                        value={assignment['availableFromDate']}
+                                        onChange={(e) => dispatch(setAssignment({
+                                            ...assignment,
+                                            availableFromDate: e.target.value
+                                        }))}
                                     />
                                 </div>
                                 <div className="col-6">
                                     <Form.Label><strong>Until</strong></Form.Label>
                                     <Form.Control
                                         type="date"
-                                        value={until}
-                                        onChange={(e) => setUntil(e.target.value)}
+                                        value={assignment['availableUntilDate']}
+                                        onChange={(e) => dispatch(setAssignment({
+                                            ...assignment,
+                                            availableUntilDate: e.target.value
+                                        }))}
                                     />
                                 </div>
                             </div>
