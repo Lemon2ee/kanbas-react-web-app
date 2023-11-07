@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import TodoList from "./Todo";
 
 function WorkingWithArrays() {
     const API = "http://localhost:4000/a5/todos";
@@ -14,6 +15,8 @@ function WorkingWithArrays() {
     return (
         <div>
             <h3>Working with Arrays</h3>
+            <TodoList/>
+
             <input
                 value={todo.title}
                 onChange={(e) => setTodo({
