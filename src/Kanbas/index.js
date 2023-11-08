@@ -2,14 +2,14 @@ import KanbasNavigation from "./KanbasNavigation";
 import {Navigate, Route, Routes} from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
-import {useState} from "react";
-import db from "./Database";
+import {useEffect, useState} from "react";
 import {Provider} from "react-redux";
 import store from "./store";
+import axios from "axios";
 
 
 function Kanbas() {
-    const [courses, setCourses] = useState(db.courses);
+    const [courses, setCourses] = useState([]);
 
     const [course, setCourse] = useState({
         name: "New Course",
@@ -19,29 +19,46 @@ function Kanbas() {
         _id: ""
     });
 
-    const addNewCourse = () => {
-        // must modify the code such that it would update both course._id as well as the course _id saved in courses
-        const _id = new Date().getTime().toString()
-        setCourse({...course, _id: _id})
-        setCourses([...courses, {...course, _id}]);
+    const URL = "http://localhost:4000/api/courses";
+    const findAllCourses = async () => {
+        const response = await axios.get(URL);
+        return response.data
+    };
+
+    useEffect(() => {
+        findAllCourses().then((courses) => setCourses(courses))
+    }, []);
+
+
+    const addNewCourse = async () => {
+        const response = await axios.post(URL, course);
+        setCourses([
+            response.data,
+            ...courses,
+        ]);
     };
 
 
-    const deleteCourse = (courseId) => {
-        setCourses(courses.filter((course) => course._id !== courseId));
+    const deleteCourse = async (courseID) => {
+        await axios.delete(
+            `${URL}/${courseID}`
+        );
+        setCourses(courses.filter(
+            (c) => c._id !== courseID));
     };
 
-    const updateCourse = () => {
+
+    const updateCourse = async (course) => {
+
+        const response = await axios.put(
+            `${URL}/${course._id}`,
+            course
+        );
         setCourses(
-            courses.map((c) => {
-                if (c._id === course._id) {
-                    return course;
-                } else {
-                    return c;
-                }
-            })
+            response.data
         );
     };
+
 
     return (
         <Provider store={store}>
@@ -60,7 +77,7 @@ function Kanbas() {
                             updateCourse={updateCourse}/>
                     }/>
                     <Route path="Courses/*" element={<h1>Courses</h1>}/>
-                    <Route path="Courses/:courseId/*" element={<Courses courses={courses}/>}/>
+                    <Route path="Courses/:courseId/*" element={<Courses/>}/>
                 </Routes>
 
             </div>

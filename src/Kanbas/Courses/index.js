@@ -6,11 +6,26 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 
-function Courses({courses}) {
+function Courses() {
     const {courseId} = useParams();
-    const course = courses.find((course) => course._id === courseId);
+    const [course, setCourse] = useState({});
+    const findCourseById = async (courseId) => {
+        const URL = "http://localhost:4000/api/courses";
+        const response = await axios.get(
+            `${URL}/${courseId}`
+        );
+        return response.data
+    };
+
+    useEffect(() => {
+        findCourseById(courseId).then((course) => setCourse(course));
+    }, [courseId]);
+
+
     const location = useLocation().pathname.split('/');
     const modifiedLocation = location.slice(4);
     modifiedLocation.unshift(course.name);

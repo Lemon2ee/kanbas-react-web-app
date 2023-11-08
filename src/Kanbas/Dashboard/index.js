@@ -54,7 +54,9 @@ function Dashboard(
                     </button>
 
 
-                    <button className={"btn btn-dark m-1"} onClick={updateCourse}>
+                    <button className={"btn btn-dark m-1"} onClick={() => {
+                        updateCourse(course)
+                    }}>
                         Update
                     </button>
 
