@@ -1,17 +1,45 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {Accordion} from "react-bootstrap";
 import 'font-awesome/css/font-awesome.min.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faEllipsisV, faGripVertical, faLink, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {useDispatch, useSelector} from "react-redux";
-import {addModule, deleteModule, setModule, updateModule,} from "./modulesReducer";
+import {addModule, deleteModule, setModule, setModules, updateModule,} from "./modulesReducer";
+import * as client from "./client";
 
 function ModuleList() {
     const {courseId} = useParams();
     const modules = useSelector((state) => state.modulesReducer.modules);
     const module = useSelector((state) => state.modulesReducer.module);
     const dispatch = useDispatch();
+
+    const handleAddModule = () => {
+        client.createModule(courseId, module).then((module) => {
+            dispatch(addModule({...module, course: courseId}))
+        });
+    };
+
+    const handleDeleteModule = (moduleId) => {
+        client.deleteModule(moduleId).then(() => {
+            dispatch(deleteModule(moduleId));
+        });
+    };
+
+    const handleUpdateModule = async () => {
+        client.updateModule(module).then((module) => {
+            dispatch(updateModule(module));
+        });
+
+    };
+
+
+    useEffect(() => {
+        client.findModulesForCourse(courseId)
+            .then((modules) =>
+                dispatch(setModules(modules))
+            );
+    }, [courseId, dispatch, modules]);
 
 
     return (
@@ -30,14 +58,10 @@ function ModuleList() {
                               }
                     />
                     <button className={"btn btn-primary mx-1"}
-                            onClick={() => {
-
-                                dispatch(addModule({...module, course: courseId}))
-                            }
-                            }>Add
+                            onClick={handleAddModule}>Add
                     </button>
 
-                    <button className={"btn btn-primary mx-1"} onClick={() => dispatch(updateModule(module))}
+                    <button className={"btn btn-primary mx-1"} onClick={handleUpdateModule}
                     >Update
                     </button>
                 </div>
@@ -79,7 +103,7 @@ function ModuleList() {
                                                         className="btn btn-danger m-1"
                                                         onClick={(e) => {
                                                             e.preventDefault();
-                                                            dispatch(deleteModule(module._id))
+                                                            handleDeleteModule(module._id)
                                                         }}>
                                                         Delete
                                                     </a>
