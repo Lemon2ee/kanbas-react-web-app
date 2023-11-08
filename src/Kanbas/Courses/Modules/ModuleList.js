@@ -30,7 +30,6 @@ function ModuleList() {
         client.updateModule(module).then((module) => {
             dispatch(updateModule(module));
         });
-
     };
 
 
@@ -39,7 +38,7 @@ function ModuleList() {
             .then((modules) =>
                 dispatch(setModules(modules))
             );
-    }, [courseId, dispatch, modules]);
+    }, [courseId, dispatch]);
 
 
     return (

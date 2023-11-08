@@ -57,6 +57,7 @@ export default function TodoList() {
 
     useEffect(() => {
         fetchTodos().then((data) => setTodos(data))
+        // eslint-disable-next-line
     }, []);
 
     return (

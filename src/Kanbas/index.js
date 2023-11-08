@@ -27,6 +27,7 @@ function Kanbas() {
 
     useEffect(() => {
         findAllCourses().then((courses) => setCourses(courses))
+        // eslint-disable-next-line
     }, []);
 
 
