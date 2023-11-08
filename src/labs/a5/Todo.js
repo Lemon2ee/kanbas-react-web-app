@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 
 export default function TodoList() {
-    const API = "http://localhost:4000/a5/todos";
+    const API = `${process.env.REACT_APP_API_BASE}/a5/todos`;
 
     const [todo, setTodo] = useState({
         id: 1,
